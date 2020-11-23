@@ -9,11 +9,18 @@
   */
   
   //CODE HERE
+function myFunc() {
+  let myStr = 'super secret string';
 
-  
-  //Now create a variable called secretString. Its value should be the invocation of myFunc.
+  return function getSecretString() {
+    return myStr
+  }
+}
 
-  //CODE HERE
+//Now create a variable called secretString. Its value should be the invocation of myFunc.
+
+//CODE HERE
+const secretString = myFunc()
   
   
   ////////////PROBLEM 2////////////
@@ -29,27 +36,39 @@
   */
   
   //CODE HERE
+function lightSwitch() {
+  let isTheLightOn = false;
 
+  return function flipTheSwitch() {
+    if (isTheLightOn === true) {
+      return 'The light is on'
+    } else {
+      return 'The light is off'
+  }
+}
+}
   
   //Create a variable called kitchenSwitch whose value is the invocation of lightSwitch.
   
   //CODE HERE
+const kitchenSwitch = lightSwitch()
 
-  
-  //Invoke kitchenSwitch.
+//Invoke kitchenSwitch.
 
-  //CODE HERE
+//CODE HERE
+kitchenSwitch()
   
   
   //Create a variable called bathroomSwitch whose value is the invocation of lightSwitch. 
 
   //CODE HERE
-  
+  let bathroomSwitch = lightSwitch()
   
   //Invoke bathroomSwitch twice.
   
   //CODE HERE
-
+bathroomSwitch()
+bathroomSwitch()
   
   
   ////////////PROBLEM 3////////////
@@ -64,7 +83,24 @@
   */
 
   //CODE HERE
+function plantTracker() {
+  let plant = 'fern' 
+  let height = 12
 
+  return {
+    readInfo(plant, height) {
+      return `This is a ${plant} plant that is ${height} inches tall`
+    },
+    waterPlant(height) {
+      height + 1
+      return height
+    },
+    prunePlant(height) {
+      height - 1 
+      return height
+    }
+  }
+}
 
   ////////////PROBLEM 4////////////
 
@@ -79,18 +115,33 @@
   */
 
   //CODE HERE
+function inventory() {
+  let products = []
 
+  return{
+    readProducts() {
+      return products
+    },
+    addToProducts() {
+
+    }, 
+    deleteFromProducts() {
+
+    }
+  }
+
+}
 
   /*
     Create a variable called 'shoes' whose value is the invocation of inventory.
   */
 
   //CODE HERE
-
+var shoes = inventory()
 
   /*
     Add an item to your shoes array using the addToProducts function
   */
 
   //CODE HERE
-
+  addToProducts(shoes)
